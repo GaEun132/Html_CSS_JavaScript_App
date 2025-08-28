@@ -122,7 +122,7 @@ function deleteStudent(studentId, studentName) {
             loadStudents();
         })
         .catch((error) => {
-            console.log('Error: ',error);
+            console.log('Error : ', error);
             showError(error.message);
         });
 }//deleteStudent
