@@ -1,24 +1,120 @@
-﻿body {
-    font-family: "맑은 고딕", "돋움", "굴림";               
-    /*
-    background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment
-       bg-images : url('../images/bg.jpg') 
-       bg-repeat : no-repeat : 
-       bg-position (배경 위치) : left(가로위치-왼쪽) top(세로위치-상단) : 
-       bg-attachment (배경 고정) : fixed 페이지를 스크롤해도 배경은 움직이지 않음
-    */
-    
-    /*
-    background-size
-    : cover
-        비율 유지하며 요소 전체를 덮음
-        이미지 일부가 잘릴 수 있음
-        풀스크린 배경에 최적
-    : contain
-        비율 유지하며 요소 안에 완전 포함
-        여백이 생길 수 있음
-        로고, 아이콘에 최적
-    */
+﻿/* style.css (공통 CSS) */
+
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    margin: 0;
+    /* background */
+    background: url("../images/bg.jpg") no-repeat fixed center center / cover;
+    /* background-size */
+}
+
+#wrapper {
+    width: 960px;
+    margin: 20px auto;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: black;
+    text-align: left;
+    padding: 10px 0;
+    background-color: rgba(51, 51, 51, 0);
     
 }
 
+section {
+    border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column; /* nav가 article 위로 가도록 변경 */
+    flex-grow: 1;
+    height: 570px;
+    
+}
+
+nav {
+    width: 100%; /* 너비를 100%로 변경 */
+    background-color: black;
+}
+
+article {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox를 사용하여 가로로 정렬 */
+    justify-content: space-around; /* 항목들을 균등하게 배분 */
+}
+
+nav ul li {
+    flex-grow: 1; /* 모든 항목이 동일한 너비를 갖도록 함 */
+    text-align: center;
+    
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav a {
+    display: block;
+    margin: 2px 20px 0;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: yellow;
+}
+
+nav a.current {
+   background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+footer {
+    background-color: #4f4e4e;
+    color: #fff;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0px 10px;
+    text-align: left;
+}
+
+footer address {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* images\icon.png 사용 */
+h2 {
+    margin: 30px 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 50px;
+    background: url("../images/icon.png") no-repeat left center;
+    background-size: 40px 40px;
+}
